@@ -1,7 +1,6 @@
 package com.geekbrains.lesson_5;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -30,13 +29,14 @@ public class TestTransferringHw5 {
         driver = new ChromeDriver();
         webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(7));
         actions = new Actions(driver);
+
         driver.get(ONLINETRADE_URL);
 //        driver.manage().window().maximize();
     }
 
     @Test
     @DisplayName("Добавление и удаление рандомного товара")
-    void RandomAddProductAndRemoveUnauthorizedUser() throws InterruptedException {
+    void randomAddProductAndRemoveUnauthorizedUser() throws InterruptedException {
         driver.findElement(By.xpath("//span[text()='Каталог']")).click();
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='js__mCM_linkClose']/ancestor::a[@title='Товары для дома']")));
         driver.findElement(By.xpath("//span[@class='js__mCM_linkClose']/ancestor::a[@title='Товары для дома']")).click();
@@ -50,7 +50,7 @@ public class TestTransferringHw5 {
         driver.findElement(By.xpath("//div[@class= 'catalog__displayedItem__buttonCover']//a[.= 'Купить']")).click();
         Thread.sleep(4500);
         //Проверяем что товар добавлен в корзину
-        Assertions.assertThat(driver.findElement(By.xpath("//h5[contains(., 'Товар добавлен')]")).getText()
+        assertThat(driver.findElement(By.xpath("//h5[contains(., 'Товар добавлен')]")).getText()
                 .contains("Товар добавлен ")).isTrue();
 
         driver.get(ONLINETRADE_URL);
@@ -87,7 +87,7 @@ public class TestTransferringHw5 {
         driver.findElement(By.xpath("//select[@id= 'js__listingSort_ID']/option[text()= 'много мнений']")).click();
         List<WebElement> listProduct = driver.findElements(By.xpath("//div[@class= 'goods__items minilisting js__goods__items']//a[.='Купить']"));
         listProduct.get((int) (Math.random() * (listProduct.size()))).click();
-        Thread.sleep(4500);
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h5[contains(., 'Товар добавлен')]")));
         assertThat(driver.findElement(By.xpath("//h5[contains(., 'Товар добавлен')]")).getText().contains("Товар добавлен")).isTrue();
     }
 
