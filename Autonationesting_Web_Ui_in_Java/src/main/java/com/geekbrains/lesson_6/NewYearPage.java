@@ -1,5 +1,6 @@
 package com.geekbrains.lesson_6;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,6 +16,7 @@ public class NewYearPage extends BasePage {
     @FindBy(xpath = FIGURINES_CLICK_LOCATOR_BY_XPATH)
     private WebElement sectionFigurines;
 
+    @Step("Клик на раздел \"Новогодние фигурки и сувениры\" на странице \"Новогодние товары\"")
     public SectionFigurinesPage sectionFigurinesClick() {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(FIGURINES_CLICK_LOCATOR_BY_XPATH)));
         sectionFigurines.click();

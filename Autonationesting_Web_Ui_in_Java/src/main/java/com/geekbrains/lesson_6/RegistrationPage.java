@@ -1,5 +1,6 @@
 package com.geekbrains.lesson_6;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,6 +16,7 @@ public class RegistrationPage extends BasePage{
     @FindBy(xpath = CONTINUE_WITHOUT_REGISTRATION_LOCATOR_BY_XPATH)
     private WebElement continueWithoutRegistration;
 
+    @Step("Клик на кнопку \"Продолжить без регистрации\" на странице регистрации")
     public BasketPage continueWithoutRegistrationClick() {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(CONTINUE_WITHOUT_REGISTRATION_LOCATOR_BY_XPATH)));
         continueWithoutRegistration.click();
