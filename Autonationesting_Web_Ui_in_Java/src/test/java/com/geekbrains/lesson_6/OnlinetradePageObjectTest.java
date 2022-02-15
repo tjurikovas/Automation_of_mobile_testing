@@ -65,7 +65,7 @@ public class OnlinetradePageObjectTest {
     void productSearchWithUsingFilters() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         homePage.searchClick()
-                .searchTextInput("Тополь")
+                .searchTextInput("Лошадь")
                 .buttonSearchClick()
                 .categoryFieldClick()
                 .categoryRandomClick()
