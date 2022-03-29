@@ -1,0 +1,27 @@
+{
+  "capabilities":
+  [
+    {
+      "platformVersion": "8",
+      "maxInstances": 1,
+      "platformName": "Android",
+      "automationName": "UiAutomator2",
+      "udid" : "emulator-5554",
+      "deviceName": "pixel 11"
+    }
+  ],
+  "configuration":
+  {
+    "cleanUpCycle":2000,
+    "timeout":30000,
+    "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
+    "url":"http://0.0.0.0:4724/wd/hub",
+    "host": "0.0.0.0",
+    "port": 4724,
+    "maxSession": 1,
+    "register": true,
+    "registerCycle": 5000,
+    "hubPort": 4444,
+    "hubHost": "192.168.0.104"
+  }
+}

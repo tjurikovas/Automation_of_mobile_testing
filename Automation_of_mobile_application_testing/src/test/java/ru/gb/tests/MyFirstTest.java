@@ -21,7 +21,7 @@ public class MyFirstTest  extends BaseTest {
 
     @Test
     public void checkEmptyEmail() {
-        openApp()
+        openApp("ASUS_Z017D_1")
                 .clickLoginMenuButton()
                 .clickLoginButton()
                 .checkErrorTextWithoutEmail("Please enter at least 8 characters");

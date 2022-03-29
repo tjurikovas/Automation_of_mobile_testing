@@ -12,7 +12,7 @@ public class ScreenShootHelper extends BaseTest {
 
     @Test
     public void createScreen() {
-        openApp();
+        openApp("ASUS_Z017D_1");
         File actualScreenshot = $(MobileBy.AccessibilityId("Home-screen")).screenshot();
     }
 
