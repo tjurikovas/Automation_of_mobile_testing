@@ -1,4 +1,4 @@
-package ru.gb;
+package ru.gb.tests;
 
 import io.appium.java_client.MobileBy;
 import org.testng.annotations.Test;

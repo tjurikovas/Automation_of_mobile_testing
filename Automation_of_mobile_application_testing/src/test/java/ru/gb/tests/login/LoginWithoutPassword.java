@@ -1,4 +1,4 @@
-package ru.gb.tests;
+package ru.gb.tests.login;
 
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;

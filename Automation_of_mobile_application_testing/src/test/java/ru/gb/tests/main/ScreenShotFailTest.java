@@ -1,4 +1,4 @@
-package ru.gb.tests;
+package ru.gb.tests.main;
 
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
