@@ -9,7 +9,7 @@ import ru.gb.listeners.AllureListeners;
 public class ScreenShotTest extends BaseTest {
     @Test
     public void checkMainPageScreen () {
-        openApp("ASUS_Z017D_1")
+        openApp()
                 .checkScreenshot();
     }
 }

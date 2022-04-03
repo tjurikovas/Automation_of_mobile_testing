@@ -5,7 +5,8 @@ import com.github.romankh3.image.comparison.ImageComparisonUtil;
 import com.github.romankh3.image.comparison.model.ImageComparisonResult;
 import com.github.romankh3.image.comparison.model.ImageComparisonState;
 import io.qameta.allure.Step;
-import ru.gb.locators.MainPageLocators;
+import ru.gb.locators.LocatorService;
+import ru.gb.locators.interfaces.MainPageLocators;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -17,7 +18,7 @@ import static org.testng.Assert.assertNotEquals;
 public class MainPage {
     // Метод позволяет нам работать с локаторами для нужной нам страницы.
     private MainPageLocators locator() {
-        return new MainPageLocators();
+        return LocatorService.MAIN_PAGE_LOCATORS;
     }
 
     @Step("Кликаем по кнопке логина в меню и переходим на новую страницу логина")
@@ -62,6 +63,12 @@ public class MainPage {
                 .compareImages();
         assertEquals(ImageComparisonState.MATCH, imageComparisonResult.getImageComparisonState());
         return this;
+    }
+
+    @Step("Кликаем по кнопке Forms в меню и переходим на новую страницу форм")
+    public FormsPage clickFormsMenuButton() {
+        $(locator().formsMenuButton()).click();
+        return new FormsPage();
     }
 }
 

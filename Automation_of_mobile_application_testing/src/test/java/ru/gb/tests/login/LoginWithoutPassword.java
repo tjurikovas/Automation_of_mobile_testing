@@ -17,7 +17,7 @@ public class LoginWithoutPassword extends BaseTest {
 
     @Test
     public void loginWithoutPassword () {
-        openApp("ASUS_Z017D_1").clickLoginMenuButton()
+        openApp().clickLoginMenuButton()
                 .inputEmailCorrected()
                 .clickLoginButton()
                 .checkErrorText("Please enter at least 8 characters");
